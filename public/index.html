@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>SwiftShip | Your Go-To Delivery Solution</title>
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon" />
+
+    <!-- Plugin -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  </head>
+  <body onload="animate_string()">
+    <div id="bodywrap" class="isolate bg-white font-inter antialiased">
+      <!-- Background -->
+      <div
+        class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
+        <svg
+          class="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
+          viewBox="0 0 1155 678"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)"
+            fill-opacity=".3"
+            d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z" />
+          <defs>
+            <linearGradient
+              id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533"
+              x1="1155.49"
+              x2="-78.208"
+              y1=".177"
+              y2="474.645"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#9089FC"></stop>
+              <stop offset="1" stop-color="#FF80B5"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <!-- Navigation -->
+      <div class="mx-auto max-w-7xl px-4 py-3 lg:px-11 lg:py-4">
+        <div>
+          <nav class="flex place-items-center">
+            <div class="flex flex-1 items-center">
+              <img
+                src="./img/swift.svg"
+                alt="SwiftShip"
+                class="h-14 cursor-pointer drop-shadow-md" />
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-center lg:gap-8">
+              <a href="" class="btn-nav">Home</a>
+              <a href="" class="btn-nav">Services</a>
+              <a href="" class="btn-nav">Plans</a>
+              <a href="" class="btn-nav">Docs</a>
+              <a href="" class="btn-nav">Support</a>
+            </div>
+            <div class="flex flex-1 items-center justify-end">
+              <a href="login.html" class="lg:btn-login hidden">Login</a>
+              <div class="flex lg:hidden">
+                <svg
+                  onclick="openSidebar()"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="h-8 w-8 cursor-pointer text-gray-700">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                </svg>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- Navigation (Mobile) -->
+      <div id="sidebar" class="hidden">
+        <div
+          class="fixed inset-0 z-10 bg-slate-900/25 opacity-100 backdrop-blur-sm transition-opacity">
+          <div
+            class="fixed right-0 min-h-full w-[min(20rem,calc(100vw-theme(spacing.10)))] bg-gray-100">
+            <div class="py-3 px-6">
+              <nav class="flex flex-col gap-8">
+                <div class="flex flex-1 items-center justify-between">
+                  <div>
+                    <img
+                      src="./img/swift.svg"
+                      alt="SwiftShip"
+                      class="h-14 w-full drop-shadow-md" />
+                  </div>
+                  <svg
+                    onclick="openSidebar()"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-8 w-8 cursor-pointer text-gray-700">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <div class="flex flex-1 flex-col gap-6 border-b-[1px] p-2 pb-8">
+                  <a href="" class="btn-nav !text-[#424059]">Home</a>
+                  <a href="" class="btn-nav !text-[#424059]">Services</a>
+                  <a href="" class="btn-nav !text-[#424059]">Plans</a>
+                  <a href="" class="btn-nav !text-[#424059]">Docs</a>
+                  <a href="" class="btn-nav !text-[#424059]">Support</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <a
+                    href="login.html"
+                    class="text-md w-full rounded-md border bg-[#E8E1FE] py-2 text-center font-semibold leading-6 text-[#424059] shadow-sm ring-1 ring-gray-400/10"
+                    >Login</a
+                  >
+                  <a
+                    href=""
+                    class="text-md w-full rounded-md border bg-[#424059] py-2 text-center font-semibold leading-6 text-white shadow-sm ring-1 ring-gray-400/10"
+                    >Explore More &rarr;</a
+                  >
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main Content -->
+      <div class="mt-20 md:mt-0">
+        <div
+          class="mx-auto max-w-6xl items-center px-6 pt-4 pb-10 md:px-8 md:pb-20 md:pt-24 lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:pt-32">
+          <div class="text-center sm:px-8 lg:px-0 lg:text-start">
+            <h1
+              class="mx-auto text-4xl font-extrabold leading-none text-[#424059] md:text-[2.8rem]">
+              <span class="gradient-text-modern">Affordable</span> rates and
+              <span class="gradient-text-orange">flexible</span> shipping
+              options
+            </h1>
+            <p
+              class="text-md mt-4 flex justify-center text-[#585676] md:text-lg lg:mt-6">
+              Your one-stop solution for all your delivery and shipping needs.
+              Our team of dedicated professionals works hard to ensure that your
+              packages are delivered on time.
+            </p>
+            <div
+              class="flex flex-col items-center justify-center gap-2 pt-8 text-center">
+              <a
+                href=""
+                class="w-3/6 rounded-full border border-transparent bg-[#E8E1FE] py-3 font-bold leading-6 text-[#424059]"
+                >Request a pickup</a
+              >
+              <a
+                href=""
+                class="w-3/6 rounded-full bg-transparent py-3 font-bold leading-6 text-[#424059]"
+                >View services &rarr;</a
+              >
+            </div>
+          </div>
+          <div
+            class="mt-8 flex h-full items-center justify-center sm:px-14 md:px-24 lg:px-0">
+            <img src="./img/main-content.svg" alt="SwiftShip" />
+          </div>
+        </div>
+      </div>
+      <!-- Sponsors -->
+      <div class="mt-20 bg-slate-100/50 md:mt-0">
+        <div>
+          <div class="mx-auto max-w-6xl px-10 py-14 md:py-24">
+            <div class="text-center">
+              <h1
+                class="mx-auto text-2xl font-extrabold leading-none text-[#424059] md:text-3xl">
+                Accredited by respected organizations
+              </h1>
+              <p
+                class="mt-4 text-[#585676] md:mt-6 md:px-24 md:text-lg lg:mt-4">
+                Our website has been accredited by a number of respected
+                organizations, further demonstrating our commitment to quality
+                and reliability.
+              </p>
+              <div
+                class="grid auto-cols-auto grid-cols-3 place-items-center gap-4 px-4 pt-8 md:grid-cols-6">
+                <img
+                  src="./img/accreditors/amazon.svg"
+                  alt="Amazon"
+                  class="h-full max-h-[90px] w-full max-w-[180px] rounded-md border-[1px] border-slate-700/10 bg-slate-100/10 px-2 drop-shadow-md md:px-4 lg:px-0" />
+                <img
+                  src="./img/accreditors/bmw.svg"
+                  alt="BMW"
+                  class="h-full max-h-[90px] w-full max-w-[180px] rounded-md border-[1px] border-slate-700/10 bg-slate-100/10 px-2 drop-shadow-md md:px-4 lg:px-0" />
+                <img
+                  src="./img/accreditors/google.svg"
+                  alt="Google"
+                  class="h-full max-h-[90px] w-full max-w-[180px] rounded-md border-[1px] border-slate-700/10 bg-slate-100/10 px-2 drop-shadow-md md:px-4 lg:px-0" />
+                <img
+                  src="./img/accreditors/grab.svg"
+                  alt="Grab"
+                  class="h-full max-h-[90px] w-full max-w-[180px] rounded-md border-[1px] border-slate-700/10 bg-slate-100/10 px-2 drop-shadow-md md:px-4 lg:px-0" />
+                <img
+                  src="./img/accreditors/panasonic.svg"
+                  alt="Panasonic"
+                  class="h-full max-h-[90px] w-full max-w-[180px] rounded-md border-[1px] border-slate-700/10 bg-slate-100/10 px-2 drop-shadow-md md:px-4 lg:px-0" />
+                <img
+                  src="./img/accreditors/walmart.svg"
+                  alt="Walmart"
+                  class="h-full max-h-[90px] w-full max-w-[180px] rounded-md border-[1px] border-slate-700/10 bg-slate-100/10 px-2 drop-shadow-md md:px-4 lg:px-0" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Benefits -->
+      <div class="mx-auto max-w-6xl px-6 py-8 md:py-20">
+        <div class="flex flex-col items-center justify-center gap-6 md:gap-8">
+          <h1
+            class="text-2xl font-extrabold leading-none tracking-tight text-[#424059] md:text-3xl">
+            Benefits
+          </h1>
+          <div class="grid grid-cols-1 gap-3 md:grid-cols-3">
+            <div class="flex flex-col items-center p-8 text-center">
+              <div
+                class="relative h-28 w-28 rounded-full border border-slate-800/10 drop-shadow-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="absolute inset-x-0 inset-y-0 mx-auto h-full w-full p-8 text-[#424059]/80">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                </svg>
+              </div>
+              <h2
+                class="mt-4 text-lg font-extrabold leading-none text-[#424059]">
+                Convenience
+              </h2>
+              <p class="text-md md:text-md mt-6 text-[#585676] md:mt-6 lg:mt-4">
+                With just a few clicks, you can have your packages picked up and
+                delivered to their destination
+              </p>
+            </div>
+            <div class="flex flex-col items-center p-8 text-center">
+              <div
+                class="relative h-28 w-28 rounded-full border border-slate-800/10 drop-shadow-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="absolute inset-x-0 inset-y-0 mx-auto h-full w-full p-8 text-[#424059]/80">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                </svg>
+              </div>
+              <h2
+                class="mt-4 text-lg font-extrabold leading-none text-[#424059]">
+                Affordable rates
+              </h2>
+              <p class="text-md md:text-md mt-6 text-[#585676] md:mt-6 lg:mt-4">
+                With a range of shipping options available, you can choose the
+                one that best fits your budget and needs.
+              </p>
+            </div>
+            <div class="flex flex-col items-center p-8 text-center">
+              <div
+                class="relative h-28 w-28 rounded-full border border-slate-800/10 drop-shadow-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="absolute inset-x-0 inset-y-0 mx-auto h-full w-full p-8 text-[#424059]/80">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z" />
+                </svg>
+              </div>
+              <h2
+                class="mt-4 text-lg font-extrabold leading-none text-[#424059]">
+                Tracking & Customer Support
+              </h2>
+              <p class="text-md md:text-md mt-6 text-[#585676] md:mt-6 lg:mt-4">
+                Offers real-time tracking and customer support, stay informed
+                about the status of your packages
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Swiper -->
+      <div
+        class="mx-auto max-w-6xl items-center px-6 pt-4 pb-10 md:px-8 md:pb-20 md:pt-16 lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:pt-16">
+        <div class="flex h-full w-full flex-col">
+          <h1
+            class="text-center text-4xl font-extrabold leading-none text-[#424059] md:px-8 md:text-[2.8rem] lg:px-0 lg:text-start">
+            Feedback from our satisfied customers
+          </h1>
+          <div class="swiper">
+            <div
+              class="swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal">
+              <span
+                class="swiper-pagination-progressbar-fill"
+                style="
+                  transform: translate3d(0px, 0px, 0px) scaleX(0.444444)
+                    scaleY(1);
+                  transition-duration: 300ms;
+                "></span>
+            </div>
+          </div>
+          <div class="swiper mt-8 w-full">
+            <div class="swiper-wrapper swiper-no-swiping">
+              <p
+                class="swiper-slide text-center font-rubik text-lg font-semibold tracking-tight text-[#585676] sm:px-11 lg:px-0 lg:pr-11 lg:text-start">
+                " I've been using SwiftShip for all of my shipping needs for the
+                past year, and I've never had a problem. The rates are always
+                competitive, and the service is top-notch. I highly recommend
+                them. "
+              </p>
+              <p
+                class="swiper-slide text-center font-rubik text-lg font-semibold tracking-tight text-[#585676] sm:px-11 lg:px-0 lg:pr-11 lg:text-start">
+                " I was in a bind and needed to get a package delivered ASAP,
+                and SwiftShip came through for me. Not only was the delivery
+                fast, but the customer service was excellent. I'll definitely be
+                using them again in the future. "
+              </p>
+              <p
+                class="swiper-slide text-center font-rubik text-lg font-semibold tracking-tight text-[#585676] sm:px-11 lg:px-0 lg:pr-11 lg:text-start">
+                "As a small business owner, I rely on SwiftShip to get my
+                packages delivered on time and at a reasonable price. They never
+                disappoint! Highly recommend. "
+              </p>
+            </div>
+          </div>
+          <div
+            class="swiper mt-8 grid w-full grid-cols-4 grid-rows-2 gap-4 md:mt-4 md:grid-cols-2 lg:grid-cols-4">
+            <div class="col-span-2 row-span-2">
+              <div class="swiper">
+                <div class="swiper-wrapper swiper-no-swiping">
+                  <div class="swiper-slide">
+                    <span
+                      class="items-center text-center font-rubik font-bold text-[#424059] lg:text-start">
+                      <p
+                        class="text-center font-rubik font-bold text-[#424059] lg:text-start">
+                        John S.
+                      </p>
+                      <p class="md:!text-md !text-sm lg:!text-lg">
+                        Rating: ⭐⭐⭐⭐⭐
+                      </p>
+                    </span>
+                  </div>
+                  <div class="swiper-slide">
+                    <span
+                      class="items-center text-center font-rubik font-bold text-[#424059] lg:text-start">
+                      <p
+                        class="text-center font-rubik font-bold text-[#424059] lg:text-start">
+                        Jane D.
+                      </p>
+                      <p class="md:!text-md !text-sm lg:!text-lg">
+                        Rating: ⭐⭐⭐⭐⭐
+                      </p>
+                    </span>
+                  </div>
+                  <div class="swiper-slide">
+                    <span
+                      class="items-center text-center font-rubik font-bold text-[#424059] lg:text-start">
+                      <p
+                        class="text-center font-rubik font-bold text-[#424059] lg:text-start">
+                        Rachel B.
+                      </p>
+                      <p class="md:!text-md !text-sm lg:!text-lg">
+                        Rating: ⭐⭐⭐⭐⭐
+                      </p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-span-2 row-span-2 md:row-span-4 md:place-items-center">
+              <div class="swiper h-full w-full">
+                <div class="swiper-wrapper">
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-14 hidden md:flex md:justify-center lg:mt-0">
+          <img
+            src="./img/map.svg"
+            alt="Locations"
+            class="h-full w-full max-w-xl lg:max-w-full" />
+        </div>
+      </div>
+      <!-- Banner -->
+      <div class="mx-auto max-w-6xl items-center py-6 md:px-8 md:pt-24 md:pb-8">
+        <div class="h-full w-full">
+          <div class="grid w-full grid-cols-2 gap-4 bg-[#E8E1FE] md:rounded-md">
+            <div class="p-6 md:p-8 lg:p-8">
+              <h1
+                class="md-mt-4 ml-2 text-lg font-extrabold leading-none tracking-tight text-[#424059] sm:mt-8 md:ml-6 md:text-[2.5rem]">
+                Get your packages delivered fast and hassle-free
+              </h1>
+              <p
+                class="mt-3 ml-2 text-xs text-[#585676] md:mt-6 md:ml-6 md:text-lg">
+                Whether you're shipping a small package or a large pallet, we
+                offer competitive rates to fit your budget. Also available for
+                IOS and Android devices.
+              </p>
+              <div>
+                <div class="grid grid-cols-2 place-items-center gap-2">
+                  <img
+                    class="cursor-pointer"
+                    src="./img/mobile/playstore.svg"
+                    alt="SwiftShip for Play Store"
+                    class="max-h-40 min-h-[50px]" />
+                  <img
+                    class="cursor-pointer"
+                    src="./img/mobile/appstore.svg"
+                    alt="SwiftShip for App Store"
+                    class="max-h-40 min-h-[50px]" />
+                </div>
+              </div>
+            </div>
+            <div class="h-full w-full p-4 sm:p-8 lg:p-8">
+              <img
+                src="./img/banner.svg"
+                alt="SwiftShip on Mobile"
+                class="h-full w-full" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div>
+        <div class="bg-slate-100/50 p-11 lg:px-16 lg:pt-24 lg:pb-10">
+          <div class="flex flex-col">
+            <div
+              class="grid grid-cols-2 gap-8 border-b-[1px] pb-11 md:grid-cols-3 md:px-8 lg:grid-cols-6 lg:gap-4 lg:px-4">
+              <div
+                class="order-last flex items-center justify-start lg:order-first lg:justify-center">
+                <img src="./img/swift.svg" alt="SwiftShip" />
+              </div>
+              <div class="flex flex-1 flex-col gap-4">
+                <h3 class="text-lg font-bold text-[#424059]">Services</h3>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  Package delivery
+                </p>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  Freight shipping
+                </p>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  International shipping
+                </p>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  Mail and parcel
+                </p>
+              </div>
+              <div class="flex flex-1 flex-col gap-4">
+                <h3 class="text-lg font-bold text-[#424059]">Plans</h3>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  Pay-per-shipment
+                </p>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  Monthly
+                </p>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  Annual
+                </p>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  Custom
+                </p>
+              </div>
+              <div class="flex flex-1 flex-col gap-4">
+                <h3 class="text-lg font-bold text-[#424059]">Docs</h3>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  FAQs
+                </p>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  User manual
+                </p>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  Terms and conditions
+                </p>
+              </div>
+              <div class="flex flex-1 flex-col gap-4">
+                <h3 class="text-lg font-bold text-[#424059]">Support</h3>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  Contact us
+                </p>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  Live chat
+                </p>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  Phone support
+                </p>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  Email support
+                </p>
+                <p class="text-md leading-none tracking-tight text-[#585676]">
+                  Knowledge base
+                </p>
+              </div>
+              <div class="flex flex-1 flex-col">
+                <h3 class="text-lg font-bold text-[#424059]">Subscribe</h3>
+                <p
+                  class="mt-2 text-sm leading-none tracking-tight text-[#585676]">
+                  Stay up to date with the latest news and promotions by
+                  subscribing to our newsletter.
+                </p>
+                <div class="mt-4 flex flex-1 flex-col gap-4">
+                  <input
+                    type="text"
+                    placeholder="Your email"
+                    class="h-[40px] rounded-md border border-slate-700/10 p-4 text-sm focus:border-slate-100" />
+                  <a
+                    href=""
+                    class="max-w-1/2 rounded-md bg-[#E8E1FE] py-2 px-5 text-center font-semibold leading-none text-[#424059]"
+                    >Submit</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-4 flex w-full flex-1 flex-col items-center gap-2 md:flex-row md:px-8">
+              <p
+                class="lg:text-md text-sm font-bold leading-none text-gray-500/70">
+                All Rights Reserved &copy; SwiftShip 2022
+              </p>
+              <div class="flex flex-1 flex-row justify-end md:gap-2">
+                <a
+                  class="cursor-pointer"
+                  onclick="window.location.href='https://www.facebook.com'"
+                  ><img
+                    src="./img/socials/facebook.svg"
+                    alt="SwiftShip on Facebook"
+                    class="h-8 w-8"
+                /></a>
+                <a
+                  class="cursor-pointer"
+                  onclick="window.location.href='https://www.instagram.com'">
+                  <img
+                    src="./img/socials/instagram.svg"
+                    alt="SwiftShip on Instagram"
+                    class="h-8 w-8 cursor-pointer" />
+                </a>
+                <a
+                  class="cursor-pointer"
+                  onclick="window.location.href='https://www.twitter.com'">
+                  <img
+                    src="./img/socials/twitter.svg"
+                    alt="SwiftShip on Twitter"
+                    class="h-8 w-8 cursor-pointer" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/script.js" type="text/javascript"></script>
+    <script>
+      const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        noSwipingClass: 'swiper-no-swiping',
+        direction: 'horizontal',
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+      });
+    </script>
+  </body>
+</html>

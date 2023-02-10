@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Rubik:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-login {
+    @apply inline-block rounded-lg px-4 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:text-blue-800 hover:ring-gray-900/20;
+  }
+
+  .btn-nav {
+    @apply text-lg font-semibold text-gray-900 hover:text-blue-800 lg:text-base;
+  }
+
+  .gradient-text-luxury {
+    @apply bg-gradient-to-r from-[#460C68] via-[#7F167F] to-[#F56EB3] bg-clip-text text-transparent drop-shadow-md;
+  }
+
+  .gradient-text-modern {
+    @apply bg-gradient-to-r from-[#0014FF] via-[#009EFF] to-[#3B3486] bg-clip-text text-transparent drop-shadow-md;
+  }
+
+  .gradient-text-orange {
+    @apply bg-gradient-to-r from-[#f7a326] via-[#ebc51d] to-[#fc9229] bg-clip-text text-transparent drop-shadow-md;
+  }
+}
